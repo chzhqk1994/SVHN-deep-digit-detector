@@ -126,7 +126,7 @@ In the running time, the detector operates in the 2-steps.
 
 
 
-#### Update
+## Update
 
-Function 'detect' in 'region_proposal.py'
-	regions  = mser.detect(gray, None)	>>	regions, _ = mser.detectRegions(gray)
+* Function 'detect' in Class 'MserRegionProposer' at 'digit_detector/region_proposal.py'
+  * regions  = mser.detect(gray, None)    >>    regions, _ = mser.detectRegions(gray)
