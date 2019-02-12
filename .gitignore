@@ -1,0 +1,7 @@
+*.pyc
+train.hdf5
+val.hdf5
+Untitled.ipynb
+
+.ipynb_checkpoints/
+

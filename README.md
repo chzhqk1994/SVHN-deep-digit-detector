@@ -5,10 +5,10 @@ This detector determine digit or not with CNN classifier for the region proposed
 
 ## Prerequisites
 
-* python 2.7
-* keras 1.2.2
-* opencv 2.4.11
-* tensorflow-gpu==1.0.1
+* python 3.6
+* keras 2.1.6
+* opencv 3.4.1
+* tensorflow-gpu==1.8.0
 * Etc.
 
 A list of all the packages needed to run this project can be found in [digit_detector.yml](https://github.com/penny4860/SVHN-deep-digit-detector/blob/master/digit_detector.yml). 
@@ -122,3 +122,11 @@ In the running time, the detector operates in the 2-steps.
 * [Yolo-digit-detector](https://github.com/penny4860/Yolo-digit-detector)
 * [Weakly-Supervised-Text-Detection](https://github.com/penny4860/Weakly-Supervised-Text-Detection)
 
+
+
+
+
+#### Update
+
+Function 'detect' in 'region_proposal.py'
+	regions  = mser.detect(gray, None)	>>	regions, _ = mser.detectRegions(gray)

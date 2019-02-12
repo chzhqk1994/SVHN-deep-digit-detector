@@ -3,8 +3,8 @@ import numpy as np
 import cv2
 from matplotlib import pyplot as plt
 
-import crop
-import show
+from digit_detector import crop
+from digit_detector import show
 
 
 class Regions:
@@ -60,14 +60,15 @@ class MserRegionProposer(_RegionProposer):
     
     def detect(self, img):
         gray = self._to_gray(img)
-        mser = cv2.MSER(_delta = 1)
-        regions = mser.detect(gray, None)
+        mser = cv2.MSER_create(_delta = 1)
+        regions, _ = mser.detectRegions(gray)
         bounding_boxes = self._get_boxes(regions)
         regions = Regions(img, bounding_boxes)
         return regions
     
     def _get_boxes(self, regions):
         bbs = []
+        
         for i, region in enumerate(regions):
             (x, y, w, h) = cv2.boundingRect(region.reshape(-1,1,2))
             bbs.append((y, y+h, x, x+w))

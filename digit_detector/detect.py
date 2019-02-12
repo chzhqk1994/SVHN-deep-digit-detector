@@ -2,6 +2,7 @@
 import cv2
 import numpy as np
 import keras.models
+import matplotlib.pyplot as plt
 
 import digit_detector.show as show
 
@@ -125,8 +126,9 @@ class DigitSpotter:
                 msg = "{0}".format(y_pred[i])
                 cv2.putText(image, msg, (x1, y1), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,255), thickness=2)
                 
-            cv2.imshow("MSER + CNN", image)
-            cv2.waitKey(0)
+            plt.imshow(image)    
+#             cv2.imshow("MSER + CNN", image)
+#             cv2.waitKey(0)
         
         return bbs, probs
 
