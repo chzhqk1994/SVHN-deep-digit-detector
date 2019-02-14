@@ -129,4 +129,12 @@ In the running time, the detector operates in the 2-steps.
 ## Update
 
 * Function 'detect' in Class 'MserRegionProposer' at 'digit_detector/region_proposal.py'
-  * regions  = mser.detect(gray, None)    >>    regions, _ = mser.detectRegions(gray)
+  * ~~regions  = mser.detect(gray, None)~~
+  
+  * regions, _ = mser.detectRegions(gray)
+  
+* Function 'run' in Class 'DigitSpotter' at 'digit_detector/detect.py'
+  * ~~cv2.imshow("MSER + CNN", image)~~
+  * ~~cv2.waitkey(0)~~
+  
+  * plt.imshow(image)
